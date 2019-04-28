@@ -1,0 +1,34 @@
+param_code;origin;divisor;multiplier;new_unit;new_code;new_desc
+DOSAT;GLORICH;1;1;%;DOSAT;Oxygen saturation
+DO_mgL;GLORICH;1;1;ppm;DO_mgL;Dissolved oxygen concentration
+HCO3;GLORICH;1000;61.02;ppm;HCO3;Bicarbonate ion concentration
+NO2;GLORICH;1000;46.01;ppm;NO2;Nitrite concentration, dissolved
+NO3;GLORICH;1000;62;ppm;NO3;Nitrate concentration, dissolved
+SO4;GLORICH;1000;96.06;ppm;SO4;Sulphate concentration, dissolved
+TIC;GLORICH;1000;12.01;ppm;TIC;Total inorganic carbon concentration
+TN;GLORICH;1000;14.01;ppm;TN;Total nitrogen concentration
+TOC;GLORICH;1000;12.01;ppm;TOC;Total organic carbon concentration
+TP;GLORICH;1000;30.97;ppm;TP;Total phosphorous concentration
+Temp_water;GLORICH;1;1;Cel;Temp_water;Water temperature
+pH;GLORICH;1;1;;pH;pH
+EEA_3131-01-9;Waterbase;1;1;%;DOSAT;Oxygen saturation
+EEA_3132-01-2;Waterbase;1;1;ppm;DO_mgL;Dissolved oxygen concentration
+CAS_71-52-3;Waterbase;1;1;ppm;HCO3;Bicarbonate ion concentration
+CAS_14797-65-0;Waterbase;1;1;ppm;NO2;Nitrite concentration, dissolved
+CAS_14797-55-8;Waterbase;1;1;ppm;NO3;Nitrate concentration, dissolved
+CAS_18785-72-3;Waterbase;1;1;ppm;SO4;Sulphate concentration, dissolved
+EEA_31615-01-7;Waterbase;1;1;ppm;TN;Total nitrogen concentration
+EEA_3133-06-0;Waterbase;1;1;ppm;TOC;Total organic carbon concentration
+CAS_7723-14-0;Waterbase;1;1;ppm;TP;Total phosphorous concentration
+EEA_3121-01-5;Waterbase;1;1;Cel;Temp_water;Water temperature
+EEA_3152-01-0;Waterbase;1;1;;pH;pH
+CAS_7439-97-6;Waterbase;1000;1;ppm;Hg;Mercury and its compounds
+CAS_7440-38-2;Waterbase;1000;1;ppm;As;Arsenic and its compounds
+O2-Dis-Sat;GEMStat;1;1;%;DOSAT;Oxygen saturation
+O2-Dis;GEMStat;1;1;ppm;DO_mgL;Dissolved oxygen concentration
+NO2N;GEMStat;1;1;ppm;NO2;Nitrite concentration, dissolved
+NO3N;GEMStat;1;1;ppm;NO3;Nitrate concentration, dissolved
+TN;GEMStat;1;1;ppm;TN;Total nitrogen concentration
+TP;GEMStat;1;1;ppm;TP;Total phosphorous concentration
+TEMP;GEMStat;1;1;Cel;Temp_water;Water temperature
+pH;GEMStat;1;1;;pH;pH
