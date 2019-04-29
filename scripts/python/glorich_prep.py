@@ -56,7 +56,6 @@ value_df = pd.melt(
     var_name='obs_param', value_name='obs_value'
 )
 print(value_df.head())
-print(len(value_df))
 
 # Convert values into the correct type
 value_df['obs_value'] = value_df['obs_value'].str.replace(',', '.')
@@ -69,7 +68,6 @@ vrc_df = pd.melt(
 )
 vrc_df.drop(['STAT_ID'], axis=1, inplace=True)
 print(vrc_df.head())
-print(len(vrc_df))
 
 # Concat the DFs
 obs_df = pd.concat([value_df, vrc_df], axis=1)
