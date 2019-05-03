@@ -66,7 +66,7 @@ wq_df['unit'] = wq_df['new_unit']
 print(wq_df.head())
 print(wq_df['unit'].unique())
 
-# Replace the missing units of pH with empty strings
+# Replace the missing units of pH with empty strings (necessary for the grouping)
 wq_df['unit'].replace(np.nan, '', inplace=True, regex=True)
 print(wq_df['unit'].unique())
 
@@ -108,7 +108,7 @@ print(monthly_df.head())
 print(str(len(monthly_df['station_id'].unique())) + ' stations remain in the dataset.')
 
 # Write the DF into a CSV
-monthly_df.to_csv(os.path.join(dirname, 'monthly-water-quality', 'full_monthly_data.csv'), sep=';', index=False)
+monthly_df.to_csv(os.path.join(dirname, 'full_monthly_data.csv'), sep=';', index=False)
 
 # List of parameters
 params = monthly_df['param_code'].unique()
