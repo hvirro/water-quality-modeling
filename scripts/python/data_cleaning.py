@@ -2,6 +2,7 @@
 import datetime
 import pandas as pd
 import os
+import numpy as np
 
 # Define a function to check if the date is valid
 def check_date(row):
@@ -28,7 +29,6 @@ glorich = pd.read_csv(os.path.join(dirname, 'glorich/glorich.csv'), sep=';')
 
 # Import the file with the mapped parameters
 map_df = pd.read_csv(os.path.join(dirname, 'data_map.csv'), sep=';')
-print(map_df)
 
 # Extract the rows for each dataset
 gemstat_map = map_df[map_df['origin'] == 'GEMStat']
@@ -66,8 +66,12 @@ wq_df['unit'] = wq_df['new_unit']
 print(wq_df.head())
 print(wq_df['unit'].unique())
 
+# Replace the missing units of pH with empty strings
+wq_df['unit'].replace(np.nan, '', inplace=True, regex=True)
+print(wq_df['unit'].unique())
+
 # Number of rows with negative values
-print(len(wq_df[wq_df['value'] < 0]))
+print(str(len(wq_df[wq_df['value'] < 0])) + ' negative values are in the dataset.')
 
 # Keep only rows with positive values
 wq_df = wq_df[wq_df['value'] > 0]
@@ -80,21 +84,38 @@ print(wq_df['ok_date'].value_counts())
 wq_df = wq_df[wq_df['ok_date'] == True]
 print(wq_df['ok_date'].value_counts())
 
-# Print out the final number of stations
-print(str(len(wq_df['station_id'].unique())) + ' stations remain in the dataset.')
+# Add the month of the observation as a column
+wq_df['month'] = pd.to_datetime(wq_df['date']).dt.month
 
-# Create a new DF with proper column names and write into a CSV
-out_df = pd.DataFrame(
-    {
-        'lat': wq_df['lat'],
-        'lon': wq_df['lon'],
-        'date': wq_df['date'],
-        'station_id': wq_df['station_id'],
-        'param_code': wq_df['param_code'],
-        'param_desc': wq_df['param_desc'],
-        'value': wq_df['value'],
-        'unit': wq_df['unit'],
-        'origin': wq_df['origin']
-    }
-)
-out_df.to_csv(os.path.join(dirname, 'water_quality.csv'), sep=';', index=False)
+# Drop unnecessary columns
+wq_df.drop(['date', 'divisor', 'multiplier', 'new_code', 'new_desc', 'new_unit', 'ok_date'], axis=1, inplace=True)
+
+# Create a new DF with monthly values of each parameter in each station
+
+# Create a list of columns to use for the grouping
+group_cols = list(wq_df)
+group_cols.remove('value')
+
+# Create the DF and calculate the count, mean and standard deviation for each group
+monthly_df = wq_df.groupby(group_cols)['value'].agg(['count', 'mean', 'std']).reset_index()
+print(monthly_df.head())
+
+# Calculate the coefficient of variation (CV) for the observation values of the groups
+monthly_df['cv'] = monthly_df['std'] / monthly_df['mean']
+print(monthly_df.head())
+
+# Print out the final number of stations
+print(str(len(monthly_df['station_id'].unique())) + ' stations remain in the dataset.')
+
+# Write the DF into a CSV
+monthly_df.to_csv(os.path.join(dirname, 'monthly-water-quality', 'full_monthly_data.csv'), sep=';', index=False)
+
+# List of parameters
+params = monthly_df['param_code'].unique()
+print(params)
+
+# Create a separate output file for each parameter
+for param in params:
+    param_df = monthly_df[monthly_df['param_code'] == param]
+    fname = param + '_monthly_data.csv'
+    param_df.to_csv(os.path.join(dirname, 'monthly-water-quality', fname), sep=';', index=False)

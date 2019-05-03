@@ -1,18 +1,24 @@
 param_code;origin;divisor;multiplier;new_unit;new_code;new_desc
-DOSAT;GLORICH;1;1;%;DOSAT;Oxygen saturation
-DO_mgL;GLORICH;1;1;ppm;DO_mgL;Dissolved oxygen concentration
+DOC;GLORICH;1000;12.01;ppm;DOC;Dissolved organic carbon concentration
+DOSAT;GLORICH;1;1;%;DOSAT;Oxygene saturation
+DO_mgL;GLORICH;1;1;ppm;DO_mgL;Dissolved oxygene concnetration
 HCO3;GLORICH;1000;61.02;ppm;HCO3;Bicarbonate ion concentration
 NO2;GLORICH;1000;46.01;ppm;NO2;Nitrite concentration, dissolved
 NO3;GLORICH;1000;62;ppm;NO3;Nitrate concentration, dissolved
+PC;GLORICH;1000;12.01;ppm;PC;Particulate carbon concentration
 SO4;GLORICH;1000;96.06;ppm;SO4;Sulphate concentration, dissolved
 TIC;GLORICH;1000;12.01;ppm;TIC;Total inorganic carbon concentration
+DN;GLORICH;1000;14.01;ppm;TDN;Total dissolved nitrogen
+DP;GLORICH;1000;30.97;ppm;TDP;Total dissolved phosphorus
 TN;GLORICH;1000;14.01;ppm;TN;Total nitrogen concentration
 TOC;GLORICH;1000;12.01;ppm;TOC;Total organic carbon concentration
 TP;GLORICH;1000;30.97;ppm;TP;Total phosphorous concentration
 Temp_water;GLORICH;1;1;Cel;Temp_water;Water temperature
+SPM;GLORICH;1;1;ppm;TSS;Total suspended solids
 pH;GLORICH;1;1;;pH;pH
-EEA_3131-01-9;Waterbase;1;1;%;DOSAT;Oxygen saturation
-EEA_3132-01-2;Waterbase;1;1;ppm;DO_mgL;Dissolved oxygen concentration
+EEA_3133-05-9;Waterbase;1;1;ppm;DOC;Dissolved organic carbon concentration
+EEA_3131-01-9;Waterbase;1;1;%;DOSAT;Oxygene saturation
+EEA_3132-01-2;Waterbase;1;1;ppm;DO_mgL;Dissolved oxygene concnetration
 CAS_71-52-3;Waterbase;1;1;ppm;HCO3;Bicarbonate ion concentration
 CAS_14797-65-0;Waterbase;1;1;ppm;NO2;Nitrite concentration, dissolved
 CAS_14797-55-8;Waterbase;1;1;ppm;NO3;Nitrate concentration, dissolved
@@ -21,14 +27,18 @@ EEA_31615-01-7;Waterbase;1;1;ppm;TN;Total nitrogen concentration
 EEA_3133-06-0;Waterbase;1;1;ppm;TOC;Total organic carbon concentration
 CAS_7723-14-0;Waterbase;1;1;ppm;TP;Total phosphorous concentration
 EEA_3121-01-5;Waterbase;1;1;Cel;Temp_water;Water temperature
+EEA_31-02-7;Waterbase;1;1;ppm;TSS;Total suspended solids
 EEA_3152-01-0;Waterbase;1;1;;pH;pH
 CAS_7439-97-6;Waterbase;1000;1;ppm;Hg;Mercury and its compounds
 CAS_7440-38-2;Waterbase;1000;1;ppm;As;Arsenic and its compounds
-O2-Dis-Sat;GEMStat;1;1;%;DOSAT;Oxygen saturation
-O2-Dis;GEMStat;1;1;ppm;DO_mgL;Dissolved oxygen concentration
+O2-Dis-Sat;GEMStat;1;1;%;DOSAT;Oxygene saturation
+O2-Dis;GEMStat;1;1;ppm;DO_mgL;Dissolved oxygene concnetration
 NO2N;GEMStat;1;1;ppm;NO2;Nitrite concentration, dissolved
 NO3N;GEMStat;1;1;ppm;NO3;Nitrate concentration, dissolved
+TDN;GEMStat;1;1;ppm;TDN;Total dissolved nitrogen
+TDP;GEMStat;1;1;ppm;TDP;Total dissolved phosphorus
 TN;GEMStat;1;1;ppm;TN;Total nitrogen concentration
 TP;GEMStat;1;1;ppm;TP;Total phosphorous concentration
 TEMP;GEMStat;1;1;Cel;Temp_water;Water temperature
+TSS;GEMStat;1;1;ppm;TSS;Total suspended solids
 pH;GEMStat;1;1;;pH;pH
