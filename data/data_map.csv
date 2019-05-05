@@ -5,7 +5,6 @@ DO_mgL;GLORICH;1;1;ppm;DO_mgL;Dissolved oxygene concnetration
 HCO3;GLORICH;1000;61.02;ppm;HCO3;Bicarbonate ion concentration
 NO2;GLORICH;1000;46.01;ppm;NO2;Nitrite concentration, dissolved
 NO3;GLORICH;1000;62;ppm;NO3;Nitrate concentration, dissolved
-PC;GLORICH;1000;12.01;ppm;PC;Particulate carbon concentration
 SO4;GLORICH;1000;96.06;ppm;SO4;Sulphate concentration, dissolved
 TIC;GLORICH;1000;12.01;ppm;TIC;Total inorganic carbon concentration
 DN;GLORICH;1000;14.01;ppm;TDN;Total dissolved nitrogen
